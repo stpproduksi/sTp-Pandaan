@@ -136,7 +136,7 @@ function loadProduk(){
 
 function tambahBarisTehnik(){
   const id = Date.now();
-  const divisiOptions = '<option value="">PILIH DIVISI</option><option>GILING</option><option>THERMO</option><option>EXTRUDER</option><option>BUBUT</option>';
+  const divisiOptions = '<option value="">PILIH DIVISI</option><option>GILING</option><option>THERMO</option><option>EXTRUDER</option><option>COMPRESSOR,CILLER,CT</option>';
   let html = `<div class="produk-item" id="item-${id}"><button type="button" class="btn-hapus" onclick="document.getElementById('item-${id}').remove()">X</button>`;
   html += `<label>DIVISI</label><select name="divisi" class="select-divisi" required>${divisiOptions}</select>`;
   html += `<label>DOWN TIME</label><input type="text" name="downtime" placeholder="CONTOH: 30 MENIT" required>`;
