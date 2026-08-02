@@ -185,8 +185,7 @@ function produkPickerHtml(){
 function tambahBaris(jenis){
   const container = jenis === 'thermo'? 'listProdukThermo' : (jenis === 'giling' ? 'listProdukGiling' : 'listProdukExtruder');
   const id = Date.now();
-
-  const extOptions = '<option value="">PILIH EXT</option><option>3P</option><option>AAL</option><option>4P</option><option>5P</option>';
+  
   const tfOptions = '<option value="">PILIH TF</option><option>TF11P</option><option>TF11L</option><option>TF4</option><option>TF6</option><option>TF7</option><option>TF8</option>';
 
   let html = `<div class="produk-item" id="item-${id}"><button type="button" class="btn-hapus" onclick="document.getElementById('item-${id}').remove()">X</button>`;
