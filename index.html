@@ -136,7 +136,7 @@ function loadProduk(){
 
 function tambahBarisTehnik(){
   const id = Date.now();
-  const divisiOptions = '<option value="">PILIH DIVISI</option><option>GILING</option><option>THERMO</option><option>EXTRUDER</option><option>COMPRESSOR,CILLER,CT</option>';
+  const divisiOptions = '<option value="">PILIH DIVISI</option><option>GILING</option><option>THERMO</option><option>EXTRUDER</option><option>BUBUT</option>';
   let html = `<div class="produk-item" id="item-${id}"><button type="button" class="btn-hapus" onclick="document.getElementById('item-${id}').remove()">X</button>`;
   html += `<label>DIVISI</label><select name="divisi" class="select-divisi" required>${divisiOptions}</select>`;
   html += `<label>DOWN TIME</label><input type="text" name="downtime" placeholder="CONTOH: 30 MENIT" required>`;
@@ -186,8 +186,8 @@ function tambahBaris(jenis){
   const container = jenis === 'thermo'? 'listProdukThermo' : (jenis === 'giling' ? 'listProdukGiling' : 'listProdukExtruder');
   const id = Date.now();
 
-  
-  const tfOptions = '<option value="">PILIH TF</option><option>TF11P</option><option>TF11L</option><option>TF4</option><option>TF6</option><option>TF7</option><option>TF8</option>';
+  const extOptions = '<option value="">PILIH EXT</option><option>3P</option><option>AAL</option><option>4P</option><option>5P</option>';
+  const tfOptions = '<option value="">PILIH TF</option><option>TF11L</option><option>TF11P</option><option>TF4</option><option>TF6</option><option>TF7</option><option>TF8</option>';
 
   let html = `<div class="produk-item" id="item-${id}"><button type="button" class="btn-hapus" onclick="document.getElementById('item-${id}').remove()">X</button>`;
 
@@ -201,6 +201,7 @@ function tambahBaris(jenis){
     html += `<label>BS SHEET</label><input type="text" inputmode="decimal" pattern="[0-9]+([.,][0-9]+)?" name="bs_sheet" placeholder="0">`;
     html += `<label>SALDO AKHIR</label><input type="text" inputmode="decimal" pattern="[0-9]+([.,][0-9]+)?" name="saldo_akhir" placeholder="0" required>`;
   } else {
+    if(jenis === 'extruder'){ html += `<label>EXT</label><select name="ext" class="select-ext" required>${extOptions}</select>`; }
     html += produkPickerHtml();
     html += `<label>QTY</label><input type="text" inputmode="decimal" pattern="[0-9]+([.,][0-9]+)?" name="qty" placeholder="0" required>`;
     html += `<label>WASTE</label><input type="text" inputmode="decimal" pattern="[0-9]+([.,][0-9]+)?" name="waste" placeholder="0">`;
